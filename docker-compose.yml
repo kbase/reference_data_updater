@@ -1,0 +1,8 @@
+version: "2.2"
+services:
+  metrics:
+    image: ref_updater    
+    network_mode: "host"
+    environment:
+      KAFKA_IP: ${KAFKA_IP}
+
