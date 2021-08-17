@@ -3,11 +3,11 @@ import json
 import requests
 import datetime
 import os
-# Setup a producer that connects to the broker on 140.221.43.218:9096
+# Setup a producer that connects to the broke
 # and which which automatically encodes a python object into a json bytestream.
 # kafka wants a bytestream as the value, and we want structured data so use json
-kafka_ip = os.environ["KAFKA_IP"]
-producer = KafkaProducer(bootstrap_servers=kafka_ip, value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+kafka_broker = os.environ["KAFKA_BROKER"]
+producer = KafkaProducer(bootstrap_servers=kafka_broker, value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 response = requests.get("https://ftp.ncbi.nlm.nih.gov/refseq/release/RELEASE_NUMBER")
 lines = response.text.split("\n")

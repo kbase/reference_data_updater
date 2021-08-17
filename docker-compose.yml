@@ -4,5 +4,5 @@ services:
     image: ref_updater    
     network_mode: "host"
     environment:
-      KAFKA_IP: ${KAFKA_IP}
+      KAFKA_BROKER: ${KAFKA_BROKER}
 
